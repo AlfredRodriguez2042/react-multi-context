@@ -7,9 +7,9 @@
     "parser":"@typescript-eslint/parser",
     "ignorePatterns": ["*.test.js", "*.spec.js"],
     "extends": [
-        "plugin:react/recommended",
-        "standard-with-typescript",
-        "plugin:prettier/recommended"
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react-hooks/recommended"
     ],
     "overrides": [
     ],
@@ -25,6 +25,7 @@
     "rules": {
         "@typescript-eslint/strict-boolean-expressions":"off",
         "@typescript-eslint/explicit-function-return-type":"off",
-        "react/display-name":"off"
+        "react/display-name":"off",
+        "@typescript-eslint/no-explicit-any":"off"
     }
 }

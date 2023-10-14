@@ -3,10 +3,9 @@ export const combineReducers = (reducers: any) => {
     return Object.keys(reducers).reduce(
       (acc, reducer) => ({
         ...acc,
-        ...reducers[reducer]({ [reducer]: acc[reducer] }),
-        action,
+        ...reducers[reducer]({ [reducer]: acc[reducer] }, action),
       }),
-      state
+      state,
     )
   }
 }

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useMemo, useReducer } from 'react'
+import { createContext, useContext, useMemo, useReducer } from 'react'
 import { AuthProps, IAuthProvider } from './Interfaces'
 import { AuthReducers } from './Reducers'
 
@@ -10,8 +10,7 @@ const AuthProvider = ({ children }: AuthProps) => {
     loading: false,
   }
   const [authState, dispatch] = useReducer(AuthReducers, initialState)
-
-  const state: any = useMemo(() => [authState, dispatch], [authState])
+  const state = useMemo(() => ({ ...authState, dispatch }), [authState])
   return (
     <AuthContext.Provider value={{ ...state }}>{children}</AuthContext.Provider>
   )
